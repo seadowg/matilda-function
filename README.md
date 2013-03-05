@@ -1,5 +1,7 @@
 #ruby-recursive
 
+[![Build Status](https://travis-ci.org/oetzi/ruby-recursive.png?branch=master)](https://travis-ci.org/oetzi/ruby-recursive)
+
 ## Description
 
 Recursive calls are pretty easy in Ruby: lambdas, Procs and methods can
