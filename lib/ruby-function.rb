@@ -12,6 +12,12 @@ class Proc
     end
   end
 
+  def <<(func)
+    Proc.new do |*args|
+      func.call(self.call(*args))
+    end
+  end
+
   private
 
   class RecursiveStep
