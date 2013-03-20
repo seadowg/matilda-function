@@ -13,4 +13,9 @@ describe "recursive" do
 
     func.call(10).must_equal(0)
   end
+
+  it "returns an instance of Proc" do
+    func = recursive { |this| this.call }
+    func.kind_of?(Proc).must_equal true
+  end
 end
