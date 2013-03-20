@@ -41,7 +41,7 @@ This allows for infinitely recursive operations. Here's a quick example:
 So we can pretend we are coding in Haskell we use the `<<` operator for composition on Procs:
 
     sort = proc { |array| array.sort }
-    reverse = proc { |array| array.reverese }
+    reverse = proc { |array| array.reverse }
     reverese_order = sort << reverse
     reverese_order.call [3,1,4,8] #=> [8,4,3,1]
     
