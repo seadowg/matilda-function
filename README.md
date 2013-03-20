@@ -1,6 +1,6 @@
 #ruby-recursive
 
-[![Build Status](https://travis-ci.org/oetzi/ruby-recursive.png?branch=master)](https://travis-ci.org/oetzi/ruby-recursive)
+[![Build Status](https://travis-ci.org/seadowg/milo.png?branch=master)](https://travis-ci.org/oetzi/ruby-recursive)
 
 ## Description
 
