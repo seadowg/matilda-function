@@ -4,6 +4,8 @@
 
 ## Description
 
+### Recursive
+
 Recursive calls are pretty easy in Ruby: lambdas, Procs and methods can
 all reference themselves. However, these recursive calls will deepen the
 Ruby call stack. Enter the `recursive` method:
