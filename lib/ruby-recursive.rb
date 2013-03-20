@@ -1,17 +1,15 @@
-class Recursive
-  def initialize(&block)
-    @block = block
-  end
+class Proc
+  def self.recursive(&block)
+    Proc.new do |args|
+      step = RecursiveStep.new
+      returned = block.call(step, *args)
 
-  def call(*args)
-    step = RecursiveStep.new
-    returned = @block.call(step, *args)
+      while returned.kind_of?(RecursiveStep)
+        returned = block.call(step, *returned.args)
+      end
 
-    while returned.kind_of?(RecursiveStep)
-      returned = @block.call(step, *returned.args)
+      returned
     end
-
-    returned
   end
 
   private
@@ -30,7 +28,7 @@ module RecursiveExtension
   def self.extended(mod)
     mod.module_eval do
       def recursive(&block)
-        Recursive.new(&block)
+        Proc.recursive(&block)
       end
     end
   end
