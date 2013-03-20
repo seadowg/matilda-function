@@ -1,6 +1,6 @@
 #ruby-function
 
-[![Build Status](https://travis-ci.org/seadowg/milo.png)](https://travis-ci.org/seadowg/milo.png?branch=master)
+[![Build Status](https://travis-ci.org/seadowg/ruby-function.png?branch=master)](https://travis-ci.org/seadowg/ruby-function)
 
 ## Description
 
