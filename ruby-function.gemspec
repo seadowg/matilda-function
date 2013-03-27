@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Callum Stott"]
   s.email = ["callum@seadowg.com"]
   s.summary = "Enhancement to Ruby Procs to allow for some wholesome Functional goodness."
+  s.license = 'MIT'
 
   s.require_paths = ['lib']
   s.files = `git ls-files`.split("\n")
