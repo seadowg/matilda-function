@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'ruby-function'
+require 'function'
 
 describe "recursive" do
   it "creates a recursive function" do
