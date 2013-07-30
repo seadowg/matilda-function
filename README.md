@@ -1,10 +1,23 @@
-#ruby-function
+#matilda-function
 
-[![Build Status](https://travis-ci.org/seadowg/ruby-function.png?branch=master)](https://travis-ci.org/seadowg/ruby-function)
+[![Build Status](https://travis-ci.org/seadowg/matilda-function.png?branch=master)](https://travis-ci.org/seadowg/matilda-function)
 
 ## Description
 
 This library provides extensions to Ruby's Proc to allow for some functional goodness.
+
+### Composition
+
+So we can pretend we are coding in Haskell we use the `<<` operator for composition on Procs:
+
+    sort = proc { |array| array.sort }
+    reverse = proc { |array| array.reverse }
+    reverese_order = sort << reverse
+    reverese_order.call [3,1,4,8] #=> [8,4,3,1]
+    
+When we combine two Procs using `<<` we create a new Proc that will first execute the receiver Proc and
+then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex 
+high order functons in Ruby.
 
 ### Recursive
 
@@ -35,16 +48,3 @@ This allows for infinitely recursive operations. Here's a quick example:
     # => "Marco"
     # => "Polo"
     # ...
-    
-### Composition
-
-So we can pretend we are coding in Haskell we use the `<<` operator for composition on Procs:
-
-    sort = proc { |array| array.sort }
-    reverse = proc { |array| array.reverse }
-    reverese_order = sort << reverse
-    reverese_order.call [3,1,4,8] #=> [8,4,3,1]
-    
-When we combine two Procs using `<<` we create a new Proc that will first execute the receiver Proc and
-then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex 
-high order functons in Ruby.
