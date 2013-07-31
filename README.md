@@ -2,6 +2,18 @@
 
 [![Build Status](https://travis-ci.org/seadowg/matilda-function.png?branch=master)](https://travis-ci.org/seadowg/matilda-function)
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'matilda-function'
+```
+
+And then execute:
+
+    $ bundle
+
 ## Description
 
 This library provides extensions to Ruby's Proc to allow for some functional goodness.
@@ -14,9 +26,9 @@ So we can pretend we are coding in Haskell we use the `<<` operator for composit
     reverse = proc { |array| array.reverse }
     reverese_order = sort << reverse
     reverese_order.call [3,1,4,8] #=> [8,4,3,1]
-    
+
 When we combine two Procs using `<<` we create a new Proc that will first execute the receiver Proc and
-then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex 
+then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex
 high order functons in Ruby.
 
 ### Recursive
