@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'function'
+require 'matilda-function'
 
 describe "recursive" do
   it "creates a recursive function" do
