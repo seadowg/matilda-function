@@ -18,6 +18,13 @@ class Proc
     end
   end
 
+  def +(func)
+    Proc.new do |*args|
+      self.call(*args)
+      func.call(*args)
+    end
+  end
+
   private
 
   class RecursiveStep

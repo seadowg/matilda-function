@@ -34,4 +34,18 @@ describe "Proc" do
       (sort << reverse).call([1,4,2,3]).must_equal [4,3,2,1]
     end
   end
+
+  describe "#+" do
+    it "returns a Proc" do
+      func = Proc.new {} + Proc.new {}
+      func.kind_of?(Proc).must_equal true
+    end
+
+    it "returns a Proc that executes the callee and arg in order" do
+      sort = Proc.new { |array| array.sort! }
+      reverse = Proc.new { |array| array.reverse! }
+
+      (sort + reverse).call([1,4,2,3]).must_equal [4,3,2,1]
+    end
+  end
 end
