@@ -31,7 +31,7 @@ When we combine two Procs using `<<` we create a new Proc that will first execut
 then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex
 high order functons in Ruby.
 
-You can also combine functions using the `+` operator. This will ignore the output of each combined function and so
+You can also combine Procs using the `+` operator. This will ignore the output of each combined function and so
 allows you to build a stack of 'void' like operations.
 
 ### Recursive
