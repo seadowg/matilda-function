@@ -24,6 +24,7 @@ So we can pretend we are coding in Haskell we use the `<<` operator for composit
 
     sort = proc { |array| array.sort }
     reverse = proc { |array| array.reverse }
+    
     reverese_order = sort << reverse
     reverese_order.call [3,1,4,8] #=> [8,4,3,1]
 
@@ -31,8 +32,13 @@ When we combine two Procs using `<<` we create a new Proc that will first execut
 then pass the result to the argument Proc. This provides an expressive and modular approach to creating complex
 high order functons in Ruby.
 
-You can also combine Procs using the `+` operator. This will ignore the output of each combined function and so
-allows you to build a stack of 'void' like operations.
+You can also combine Procs using the `+` operator. This allows you to stack 'side-effecty' operations:
+
+    log = proc { |model| Logger.log("Saving #{model}") }
+    save_to_db = proc { |model| Database.save(model) }
+    
+    save_model = log + save_to_db
+    save_model.call(model)
 
 ### Recursive
 
